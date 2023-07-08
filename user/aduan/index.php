@@ -2,39 +2,53 @@
 require_once '_top.php';
 require_once 'connection.php';
 
-$result = mysqli_query($connection, "SELECT * FROM suara_ti");
+$result = mysqli_query($connection, "SELECT * FROM pengaduan");
 ?>
 
 <section class="section">
   <div class="section-header d-flex justify-content-between">
-    <h1>List Suara</h1>
-    <a href="./create.php" class="btn btn-primary">Tambah Data</a>
+    <h1>List Pengaduan</h1>
   </div>
   <div class="row">
     <div class="col-12">
       <div class="card">
         <div class="card-body">
           <div class="table-responsive">
-            <table class="table table-hover table-striped w-100" id="table-1">
+            <table class="table table-hover ta    ble-striped w-100" id="table-1">
               <thead>
                 <tr>
-                  <th>Nama Pemilih</th>
-                  <th>Pilihan</th>
+                  <th>#</th>
+                  <th>Gambar</th>
+                  <th>Judul</th>
+                  <th>Deskripsi</th>
+                  <th>Tgl Pengaduan</th>
+                  <th>tanggapan</th>
                 </tr>
               </thead>
               <tbody>
                 <?php
-                while ($data = mysqli_fetch_array($result)) :
-                ?>
-
-                  <tr>
-                    <td><?= $data['nama_pemilih'] ?></td>
-                    <td><?= $data['pilihan'] ?></td>
-                  </tr>
-
+              $counter = 1;
+              while ($data = mysqli_fetch_array($result)) :
+              ?>
+                <tr>
+                  <td><?= $counter++ ?></td>
+                  <td><img src="../../admin/assets/img/pengaduan/<?= $data['image'] ?>" width="100" height="100"></td>
+                  <td><?= $data['judul'] ?></td>
+                  <td><?= $data['deskripsi'] ?></td>
+                  <td><?= $data['tgl_pengaduan'] ?></td>
+                  <td>
+                    <?php
+                      if ($data['tanggapan'] === null) {
+                        echo "Aduan belum ditanggapi";
+                      } else {
+                        echo $data['tanggapan'];
+                      }
+                    ?>
+                  </td>
+                </tr>
                 <?php
-                endwhile;
-                ?>
+              endwhile;
+              ?>
               </tbody>
             </table>
           </div>
@@ -51,25 +65,25 @@ require_once '_bottom.php';
 if (isset($_SESSION['info'])) :
   if ($_SESSION['info']['status'] == 'success') {
 ?>
-    <script>
-      iziToast.success({
-        title: 'Sukses',
-        message: `<?= $_SESSION['info']['message'] ?>`,
-        position: 'topCenter',
-        timeout: 5000
-      });
-    </script>
-  <?php
+<script>
+  iziToast.success({
+    title: 'Sukses',
+    message: `<?= $_SESSION['info']['message'] ?>`,
+    position: 'topCenter',
+    timeout: 5000
+  });
+</script>
+<?php
   } else {
   ?>
-    <script>
-      iziToast.error({
-        title: 'Gagal',
-        message: `<?= $_SESSION['info']['message'] ?>`,
-        timeout: 5000,
-        position: 'topCenter'
-      });
-    </script>
+<script>
+  iziToast.error({
+    title: 'Gagal',
+    message: `<?= $_SESSION['info']['message'] ?>`,
+    timeout: 5000,
+    position: 'topCenter'
+  });
+</script>
 <?php
   }
 

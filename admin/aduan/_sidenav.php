@@ -12,9 +12,7 @@
       <li class="menu-header">Dashboard</li>
       <li><a class="nav-link" href="../index.php"><i class="fas fa-home"></i> <span>Home</span></a></li>
       <li class="menu-header">Main Feature</li>
-      <li><a class="nav-link" href="./index.php"><i class="fas fa-columns"></i> <span>Kelola Aduan</span></a></li>
-      
-    
+      <li><a class="nav-link" href="./index.php"><i class="fas fa-columns"></i> <span>Kelola Pengaduan</span></a></li>
     </ul>
   </aside>
 </div>

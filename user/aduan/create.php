@@ -30,7 +30,7 @@ require_once 'connection.php';
               </tr>
               <tr>
                 <td>Deskripsi</td>
-                <td colspan="3"><textarea class="form-control" name="deskripsi" required></textarea></td>
+                <td colspan="3"><textarea class="form-control" name="deskripsi" style="height: 150px;" required></textarea></td>
               </tr>
               <tr>
                 <td>Tanggal Pengaduan</td>

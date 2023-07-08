@@ -6,14 +6,14 @@
       </a>
     </div>
     <div class="sidebar-brand sidebar-brand-sm">
-      <a href="../user/index.php">EF</a>
+      <a href="/user/index.php"></a>
     </div>
     <ul class="sidebar-menu">
       <li class="menu-header">Dashboard</li>
       <li><a class="nav-link" href="../user/index.php"><i class="fas fa-home"></i><span>Home</span></a></li>
       <li class="menu-header">Main Feature</li>
       <li><a class="nav-link" href="../user/aduan/create.php"><i class="fas fa-bullhorn"></i> <span>Buat Aduan</span></a></li>
-
+      <li><a class="nav-link" href="../user/aduan/index.php"><i class="fas fa-list"></i> <span>Daftar aduan</span></a></li>
     </ul>
   </aside>
 </div>

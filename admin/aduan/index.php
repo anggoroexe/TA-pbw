@@ -22,10 +22,12 @@ $result = mysqli_query($connection, "SELECT * FROM pengaduan");
                   <th>Judul</th>
                   <th>Deskripsi</th>
                   <th>Tgl Pengaduan</th>
+                  <th>tanggapan</th>
+                  <th>aksi</th>
                 </tr>
               </thead>
               <tbody>
-              <?php
+                <?php
               $counter = 1;
               while ($data = mysqli_fetch_array($result)) :
               ?>
@@ -35,8 +37,23 @@ $result = mysqli_query($connection, "SELECT * FROM pengaduan");
                   <td><?= $data['judul'] ?></td>
                   <td><?= $data['deskripsi'] ?></td>
                   <td><?= $data['tgl_pengaduan'] ?></td>
+                  <td>
+                    <?php
+                      if ($data['tanggapan'] === null) {
+                        echo "Aduan ini belum anda ditanggapi";
+                      } else {
+                        echo $data['tanggapan'];
+                      }
+                    ?>
+                  </td>
+                  <td>
+                    <a href="delete.php?id_pengaduan=<?= $data['id_pengaduan'] ?>"
+                      onclick="return confirm('Apakah Anda yakin ingin menghapus data ini?')">
+                      <i class="fa fa-trash"></i>
+                    </a>
+                  </td>
                 </tr>
-              <?php
+                <?php
               endwhile;
               ?>
               </tbody>
@@ -46,7 +63,6 @@ $result = mysqli_query($connection, "SELECT * FROM pengaduan");
       </div>
     </div>
 </section>
-
 <?php
 require_once '_bottom.php';
 ?>

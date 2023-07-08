@@ -19,10 +19,11 @@ if ($_FILES["image"]["size"] > 1000000) { // 1MB
 if (move_uploaded_file($_FILES["image"]["tmp_name"], $target_file)) {
     $nama_file = basename($_FILES["image"]["name"]);
     $koneksi = mysqli_connect("localhost", "root", "", "hmjpoll");
-    $query = "INSERT INTO pengaduan (id_pengaduan, judul, image, deskripsi, tgl_pengaduan) VALUES ('$id_pengaduan','$judul', '$nama_file', '$deskripsi', '$tgl_pengaduan')";
+    $query = "INSERT INTO pengaduan (id_pengaduan, judul, image, deskripsi, tgl_pengaduan, tanggapan) VALUES ('$id_pengaduan', '$judul', '$nama_file', '$deskripsi', '$tgl_pengaduan', NULL)";
     mysqli_query($koneksi, $query);
     
     echo "Data pengaduan berhasil disimpan.";
+    header("Refresh: 3; url=create.php");
 } else {
     echo "Terjadi kesalahan saat mengunggah file gambar.";
 }
