@@ -1,0 +1,18 @@
+/**
+ *
+ * You can write your CSS code here, DO NOT touch the default JavaScript file
+ * because it will make it harder for you to update.
+ * 
+ */
+
+/*# sourceMappingURL=custom.css.map */
+input[type=password],
+input[type=text] {
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  display: block;
+  font-size: 18px;
+  margin: 5px 0px 10px;
+  padding: 8px;
+  width: 250px;
+}
