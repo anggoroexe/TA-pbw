@@ -1,7 +1,7 @@
 </div>
 <footer class="main-footer">
   <div class="footer-left">
-    UIN WALISONGO</a>
+    Create with Love</a>
   </div>
   <div class="footer-right">
 

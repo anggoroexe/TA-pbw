@@ -10,10 +10,9 @@
     </div>
     <ul class="sidebar-menu">
       <li class="menu-header">Dashboard</li>
-      <li><a class="nav-link" href="../index.php"><i class="fas fa-fire"></i> <span>Home</span></a></li>
+      <li><a class="nav-link" href="../index.php"><i class="fas fa-home"></i> <span>Home</span></a></li>
       <li class="menu-header">Main Feature</li>
-      <li><a class="nav-link" href="./index_ti.php"><i class="fas fa-columns"></i> <span>Kelola Hasil</span></a></li>
-      <li><a class="nav-link" href="../kandidat/index_ti.php"><i class="fas fa-columns"></i> <span>Kelola Kandidat</span></a></li>
+      <li><a class="nav-link" href="./index.php"><i class="fas fa-columns"></i> <span>Kelola Aduan</span></a></li>
       
     
     </ul>

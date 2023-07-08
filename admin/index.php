@@ -1,11 +1,6 @@
 <?php
 require_once '_top.php';
 require_once 'connection.php';
-
-$dosen = mysqli_query($connection, "SELECT COUNT(*) FROM suara_ti");
-
-
-
 ?>
 <section class="section">
   <div class="section-header">

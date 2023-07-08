@@ -13,9 +13,6 @@ if (isset($_POST['login'])) {
     if ($data['level'] == 1) {
       $_SESSION['level'] = $data['level'];
       header("Location: admin/index.php");
-    } else if ($data['level'] == 0){
-      $_SESSION['level'] = $data['level'];
-      header("Location: user/index.php");
     }
   } else {
     $msg = "<p class='alert alert-danger'>User / Password salah.. </p>";
