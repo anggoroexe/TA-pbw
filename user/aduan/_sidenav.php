@@ -2,7 +2,7 @@
   <aside id="sidebar-wrapper">
     <div class="sidebar-brand">
       <a href="../user/index.php">
-        <img src="../assets/img/logo.jpg" alt="logo" width="150">
+        <img src="../assets/img/logo.png" alt="logo" width="150">
       </a>
     </div>
     <div class="sidebar-brand sidebar-brand-sm">
@@ -12,9 +12,7 @@
       <li class="menu-header">Dashboard</li>
       <li><a class="nav-link" href="../index.php"><i class="fas fa-home"></i> <span>Home</span></a></li>
       <li class="menu-header">Main Feature</li>
-      <li><a class="nav-link" href="../suara/create.php"><i class="fas fa-bullhorn"></i> <span>Buat aduan</span></a></li>
-      <!-- <li><a class="nav-link" href="../kandidat/index_ti.php"><i class="fas fa-columns"></i> <span>Lihat Kandidat</span></a></li>
-      <li><a class="nav-link" href="../jadwal/index_ti.php"><i class="fas fa-columns"></i> <span>Informasi</span></a></li> -->
+      <li><a class="nav-link" href="../aduan/create.php"><i class="fas fa-bullhorn"></i> <span>Buat aduan</span></a></li>
 
     </ul>
   </aside>

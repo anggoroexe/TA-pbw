@@ -34,11 +34,11 @@ session_start();
 
             <div class="card card-primary">
               <div class="card-header">
-                <h4>Halaman Login</h4>
+                <h4>Daftar account</h4>
               </div>
 
               <div class="card-body">
-                <form method="POST" action="aksi.php" class="needs-validation" novalidate="">
+                <form method="POST" action="regis.php" class="needs-validation" novalidate="">
                   <div class="form-group">
                     <label for="username">Username</label>
                     <input id="username" type="text" class="form-control" name="username" tabindex="1" required autofocus>
@@ -52,18 +52,24 @@ session_start();
                       <label for="password" class="control-label">Password</label>
                     </div>
                     <input id="password" type="password" class="form-control" name="password" tabindex="2" required>
-                    <input type="checkbox" id="showPassword" />
-                    <label for="showPassword">Show password</label>
                     <div class="invalid-feedback">
                       Mohon isi kata sandi
                     </div>
                   </div>
                   <div class="form-group">
-                    <button name="login" type="login" class="btn btn-primary btn-lg btn-block" tabindex="3">
+                    <div class="d-block">
+                      <label for="confirm_password" class="control-label">Konfirmasi password</label>
+                    </div>
+                    <input id="confirm_password" type="password" class="form-control" name="confirm_password" tabindex="3" required>
+                    <div class="invalid-feedback">
+                      Mohon isi kata sandi
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <button name="login" type="login" class="btn btn-primary btn-lg btn-block" tabindex="4" value="Daftar">
                       Login
                     </button>
                   </div>
-                  Belum memiliki account ? <a href="register.php">daftar disini</a>
                 </form>
 
               </div>
@@ -79,6 +85,13 @@ session_start();
   <script>
     //showhidepassword
     document.getElementById('showPassword').onclick = function() {
+    if ( this.checked ) {
+       document.getElementById('password').type = "text";
+    } else {
+       document.getElementById('password').type = "password";
+    }
+    };
+    document.getElementById('showPassword1').onclick = function() {
     if ( this.checked ) {
        document.getElementById('password').type = "text";
     } else {

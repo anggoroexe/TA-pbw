@@ -12,9 +12,7 @@
       <li class="menu-header">Dashboard</li>
       <li><a class="nav-link" href="../user/index.php"><i class="fas fa-home"></i><span>Home</span></a></li>
       <li class="menu-header">Main Feature</li>
-      <li><a class="nav-link" href="../user/suara/create.php"><i class="fas fa-bullhorn"></i> <span>Buat Aduan</span></a></li>
-      <!-- <li><a class="nav-link" href="../user/kandidat/index_ti.php"><i class="fas fa-columns"></i> <span>Lihat Kandidat</span></a></li>
-      <li><a class="nav-link" href="../user/jadwal/index_ti.php"><i class="fas fa-columns"></i> <span>Informasi</span></a></li> -->
+      <li><a class="nav-link" href="../user/aduan/create.php"><i class="fas fa-bullhorn"></i> <span>Buat Aduan</span></a></li>
 
     </ul>
   </aside>
