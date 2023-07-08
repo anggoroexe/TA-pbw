@@ -2,6 +2,6 @@
 $dbhost = "localhost";
 $dbusername = "root";
 $dbpassword = "";
-$dbname = "hmjpoll";
+$dbname = "final_0087";
 
 $connection = mysqli_connect($dbhost, $dbusername, $dbpassword,  $dbname);

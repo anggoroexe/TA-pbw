@@ -18,7 +18,7 @@ if ($_FILES["image"]["size"] > 1000000) { // 1MB
 // Memeriksa apakah file gambar berhasil diunggah
 if (move_uploaded_file($_FILES["image"]["tmp_name"], $target_file)) {
     $nama_file = basename($_FILES["image"]["name"]);
-    $koneksi = mysqli_connect("localhost", "root", "", "hmjpoll");
+    $koneksi = mysqli_connect("localhost", "root", "", "final_0087");
     $query = "INSERT INTO pengaduan (id_pengaduan, judul, image, deskripsi, tgl_pengaduan, tanggapan) VALUES ('$id_pengaduan', '$judul', '$nama_file', '$deskripsi', '$tgl_pengaduan', NULL)";
     mysqli_query($koneksi, $query);
     

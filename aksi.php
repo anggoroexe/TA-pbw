@@ -2,7 +2,7 @@
 session_start();
 $username = $_POST['username'];
 $password = $_POST['password'];
-$conn = mysqli_connect("localhost", "root", "", "hmjpoll");
+$conn = mysqli_connect("localhost", "root", "", "final_0087");
 $query = "SELECT * FROM user WHERE username='$username' && password='$password'";
 $login = mysqli_query($conn, $query);
 $isLogin = mysqli_num_rows($login);

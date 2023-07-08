@@ -14,7 +14,7 @@ if ($password !== $confirm_password) {
 
 // Contoh penggunaan PDO
 $host = 'localhost';
-$db = 'hmjpoll';
+$db = 'final_0087';
 $user = 'root';
 $pass = '';
 
