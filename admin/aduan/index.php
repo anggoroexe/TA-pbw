@@ -8,7 +8,11 @@ $result = mysqli_query($connection, "SELECT * FROM pengaduan");
 <section class="section">
   <div class="section-header d-flex justify-content-between">
     <h1>List Pengaduan</h1>
+    <a href="cetak.php" class="btn btn-success">
+    <i class="fa fa-print"></i> Cetak
+  </a>
   </div>
+  
   <div class="row">
     <div class="col-12">
       <div class="card">
@@ -38,13 +42,15 @@ $result = mysqli_query($connection, "SELECT * FROM pengaduan");
                   <td><?= $data['deskripsi'] ?></td>
                   <td><?= $data['tgl_pengaduan'] ?></td>
                   <td>
-                    <?php
-                      if ($data['tanggapan'] === null) {
-                        echo "Aduan ini belum anda ditanggapi";
-                      } else {
-                        echo $data['tanggapan'];
-                      }
-                    ?>
+                  <?php
+                    if ($data['tanggapan'] === null) {
+                      echo "Aduan ini belum ditanggapi";
+                      echo ' <a href="create.php?id_pengaduan=' . $data['id_pengaduan'] . '" class="fas fa-edit"></a>';
+                    } else {
+                      echo $data['tanggapan'];
+                      echo ' <a href="create.php?id_pengaduan=' . $data['id_pengaduan'] . '" class="fas fa-edit"></a>';
+                    }
+                  ?>
                   </td>
                   <td>
                     <a href="delete.php?id_pengaduan=<?= $data['id_pengaduan'] ?>"

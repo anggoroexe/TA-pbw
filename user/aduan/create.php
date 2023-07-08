@@ -17,7 +17,7 @@ require_once 'connection.php';
             <table cellpadding="8" class="w-100">
               <tr>
                 <td>ID Pengaduan</td>
-                <td><input class="form-control" type="text" name="id_pengaduan" value="<?php echo date('mdHs'); ?>"
+                <td><input class="form-control" type="text" name="id_pengaduan" value="<?php echo date('mdHis'); ?>"
                     readonly></td>
               </tr>
               <tr>

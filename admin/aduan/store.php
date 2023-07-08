@@ -1,22 +1,20 @@
-<?php session_start();
+<?php
 require_once 'connection.php';
 
-$nama_pemilih=$_POST['nama_pemilih'];
-$pilihan=$_POST['pilihan'];
-$nim=$_POST['nim'];
-$kelas=$_POST['kelas'];
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    $id_pengaduan = $_POST['id_pengaduan'];
+    $tanggapan = $_POST['tanggapan'];
 
-$query=mysqli_query($connection, "insert into suara_ti(nama_pemilih, pilihan, nim, kelas) value('$nama_pemilih', '$pilihan', '$nim', '$kelas')");
+    $query = "UPDATE pengaduan SET tanggapan = '$tanggapan' WHERE id_pengaduan = '$id_pengaduan'";
+    $result = mysqli_query($connection, $query);
 
-if ($query) {
-  $_SESSION['info']=[ 'status'=>'success',
-  'message'=>'Berhasil menambah data'
-  ];
-  header('Location: create.php');
+    if ($result) {
+        echo "Tanggapan berhasil disimpan.";
+        header("Refresh: 3; url=index.php");
+    } else {
+        echo "Terjadi kesalahan saat menyimpan tanggapan.";
+    }
+} else {
+    echo "Metode permintaan tidak valid.";
 }
-
-else {
-  $_SESSION['info']=[ 'status'=>'failed',
-  'message'=>mysqli_error($connection)];
-  header('Location: create.php');
-}
+?>
