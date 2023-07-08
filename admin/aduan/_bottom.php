@@ -1,7 +1,7 @@
 </div>
 <footer class="main-footer">
   <div class="footer-left">
-    Create with Love</a>
+  Create with 	&#10084;</a>
   </div>
   <div class="footer-right">
 

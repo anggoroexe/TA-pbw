@@ -19,6 +19,7 @@ $result = mysqli_query($connection, "SELECT * FROM pengaduan");
                 <tr>
                   <th>#</th>
                   <th>Gambar</th>
+                  <th>Judul</th>
                   <th>Deskripsi</th>
                   <th>Tgl Pengaduan</th>
                 </tr>
@@ -31,6 +32,7 @@ $result = mysqli_query($connection, "SELECT * FROM pengaduan");
                 <tr>
                   <td><?= $counter++ ?></td>
                   <td><img src="../assets/img/pengaduan/<?= $data['image'] ?>" width="100" height="100"></td>
+                  <td><?= $data['judul'] ?></td>
                   <td><?= $data['deskripsi'] ?></td>
                   <td><?= $data['tgl_pengaduan'] ?></td>
                 </tr>
