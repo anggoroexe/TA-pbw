@@ -10,33 +10,26 @@ if ($password !== $confirm_password) {
   exit;
 }
 
-// Lakukan operasi penyimpanan pengguna ke basis data, misalnya menggunakan PDO atau mysqli
+// Lakukan operasi penyimpanan pengguna ke basis data, menggunakan mysqli
 
-// Contoh penggunaan PDO
 $host = 'localhost';
 $db = 'final_0087';
 $user = 'root';
 $pass = '';
 
-$dsn = "mysql:host=$host;dbname=$db;";
-$options = [
-  PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION,
-  PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC,
-  PDO::ATTR_EMULATE_PREPARES => false,
-];
+// Buat koneksi mysqli
+$mysqli = new mysqli($host, $user, $pass, $db);
 
-try {
-  $pdo = new PDO($dsn, $user, $pass, $options);
-} catch (\PDOException $e) {
-  throw new \PDOException($e->getMessage(), (int)$e->getCode());
+// Periksa koneksi mysqli
+if ($mysqli->connect_error) {
+    die("Koneksi ke database gagal: " . $mysqli->connect_error);
 }
 
 // Query untuk menyimpan pengguna ke tabel user
-$sql = "INSERT INTO user (username, password, level) VALUES (:username, :password, '0')";
+$sql = "INSERT INTO user (username, password, level) VALUES (?, ?, '0')";
 
-$stmt = $pdo->prepare($sql);
-$stmt->bindParam(':username', $username, PDO::PARAM_STR);
-$stmt->bindParam(':password', $password, PDO::PARAM_STR);
+$stmt = $mysqli->prepare($sql);
+$stmt->bind_param('ss', $username, $password);
 $stmt->execute();
 
 // Informasi pengguna berhasil terdaftar
